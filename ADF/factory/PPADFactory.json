@@ -1,0 +1,9 @@
+{
+	"name": "PPADFactory",
+	"location": "southcentralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9dade3e8-f714-45a4-bc54-4707ddcfed51",
+		"tenantId": "94e2b9e8-3ebf-42cb-a03c-55b76b55974b"
+	}
+}
