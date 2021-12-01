@@ -14,6 +14,7 @@ def extract_archive(cod):
 
     # Acessando o site do yahoo para fazer o download do arquivo .csv com os dados históricos do papel
     codigo = cod.upper() + '.SA'
+    user = gp.getuser()
     
     try:
         navegador = webdriver.Chrome(executable_path=r'./chromedriver.exe')
@@ -30,10 +31,10 @@ def extract_archive(cod):
 
 
     # Definindo o endereço local 
-    download_pasta = f"/Users/{gp.getuser}/Downloads"
-    pasta_destino_csv = f"/Users/{gp.getuser}/Documents/B3Project/Arquivos"
-    pasta_origem_json = f"/Users/{gp.getuser}/Documents/B3Project"
-    pasta_destino_json = f"/Users/{gp.getuser}/Documents/B3Project/JSON"
+    download_pasta = f"/Users/{user}/Downloads"
+    pasta_destino_csv = f"/Users/{user}/Documents/B3Project/Arquivos"
+    pasta_origem_json = f"/Users/{user}/Documents/B3Project"
+    pasta_destino_json = f"/Users/{user}/Documents/B3Project/JSON"
 
     csv = os.listdir(download_pasta)
     nome_csv = codigo + '.csv' 
@@ -73,7 +74,7 @@ def extract_archive(cod):
         print('O Arquivo Não Existe, não movido')
 
 
-    return print("Processo finalizado com Sucesso")
+    return print("Processo Finalizado")
 
 
 
