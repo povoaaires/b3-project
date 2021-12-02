@@ -36,19 +36,20 @@ def extract_archive(cod):
     pasta_origem_json = f"/Users/{user}/OneDrive - Programmer's Beyond IT/B3Project"
     pasta_destino_json = f"/Users/{user}/OneDrive - Programmer's Beyond IT/B3Project/JSON"
 
+
     csv = os.listdir(download_pasta)
-    nome_csv = codigo + '.csv' 
+    nome_csv = codigo + '.csv'  # JHSF3.SA.csv
     nome_json = codigo + ".json"
 
     resultado = nome_csv in csv 
-    end_final = download_pasta + '/'
-    
 
+    end_final = download_pasta + '/' 
+    
     if resultado == True:
 
         # Movendo da pasta Downloads para a pasta Arquivos 
-        origem_csv = end_final + nome_csv
-        destino_csv = pasta_destino_csv + '/' + nome_csv
+        origem_csv = end_final + nome_csv 
+        destino_csv = pasta_destino_csv + '/' + nome_csv 
 
         sh.move(origem_csv,destino_csv)
 
