@@ -32,9 +32,9 @@ def extract_archive(cod):
 
     # Definindo o endereço local 
     download_pasta = f"/Users/{user}/Downloads"
-    pasta_destino_csv = f"/Users/{user}/Documents/B3Project/Arquivos"
-    pasta_origem_json = f"/Users/{user}/Documents/B3Project"
-    pasta_destino_json = f"/Users/{user}/Documents/B3Project/JSON"
+    pasta_destino_csv = f"/Users/{user}/OneDrive - Programmer's Beyond IT/B3Project/Arquivos"
+    pasta_origem_json = f"/Users/{user}/OneDrive - Programmer's Beyond IT/B3Project"
+    pasta_destino_json = f"/Users/{user}/OneDrive - Programmer's Beyond IT/B3Project/JSON"
 
     csv = os.listdir(download_pasta)
     nome_csv = codigo + '.csv' 
