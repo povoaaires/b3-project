@@ -1,0 +1,157 @@
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "For_each": {
+                "actions": {
+                    "Find_files_in_folder": {
+                        "inputs": {
+                            "host": {
+                                "connection": {
+                                    "name": "@parameters('$connections')['onedriveforbusiness']['connectionId']"
+                                }
+                            },
+                            "method": "get",
+                            "path": "/datasets/default/folders/@{encodeURIComponent(encodeURIComponent('b!tH-Duyz55kiSU_csBUAPAMN6nKl3WbpCl6BayFTgYBuAAE6D31hpTaC0HZtK2OWF.01RFSYETHDXI3ZFMTGABEJFAVP57RTP7NQ'))}/search",
+                            "queries": {
+                                "findMode": "OneDriveSearch",
+                                "maxFileCount": 100,
+                                "query": "@items('For_each')?['Name']"
+                            }
+                        },
+                        "metadata": {
+                            "b!tH-Duyz55kiSU_csBUAPAMN6nKl3WbpCl6BayFTgYBuAAE6D31hpTaC0HZtK2OWF.01RFSYETHDXI3ZFMTGABEJFAVP57RTP7NQ": "/B3Project/JSON"
+                        },
+                        "runAfter": {},
+                        "type": "ApiConnection"
+                    },
+                    "For_each_2": {
+                        "actions": {
+                            "Create_blob_(V2)": {
+                                "inputs": {
+                                    "body": "@body('Get_file_content')",
+                                    "headers": {
+                                        "ReadFileMetadataFromServer": true
+                                    },
+                                    "host": {
+                                        "connection": {
+                                            "name": "@parameters('$connections')['azureblob']['connectionId']"
+                                        }
+                                    },
+                                    "method": "post",
+                                    "path": "/v2/datasets/@{encodeURIComponent(encodeURIComponent('AccountNameFromSettings'))}/files",
+                                    "queries": {
+                                        "folderPath": "/bronze",
+                                        "name": "@items('For_each_2')?['Name']",
+                                        "queryParametersSingleEncoded": true
+                                    }
+                                },
+                                "runAfter": {
+                                    "Get_file_content": [
+                                        "Succeeded"
+                                    ]
+                                },
+                                "runtimeConfiguration": {
+                                    "contentTransfer": {
+                                        "transferMode": "Chunked"
+                                    }
+                                },
+                                "type": "ApiConnection"
+                            },
+                            "Get_file_content": {
+                                "inputs": {
+                                    "host": {
+                                        "connection": {
+                                            "name": "@parameters('$connections')['onedriveforbusiness']['connectionId']"
+                                        }
+                                    },
+                                    "method": "get",
+                                    "path": "/datasets/default/files/@{encodeURIComponent(encodeURIComponent(items('For_each_2')?['Id']))}/content",
+                                    "queries": {
+                                        "inferContentType": true
+                                    }
+                                },
+                                "metadata": {
+                                    "b!tH-Duyz55kiSU_csBUAPAMN6nKl3WbpCl6BayFTgYBuAAE6D31hpTaC0HZtK2OWF.01RFSYETEXWJSU3MXAY5DL5KCZQ3OJSJ5Z": "/B3Project/JSON/JHSF3.SA.json"
+                                },
+                                "runAfter": {},
+                                "type": "ApiConnection"
+                            }
+                        },
+                        "foreach": "@body('Find_files_in_folder')",
+                        "runAfter": {
+                            "Find_files_in_folder": [
+                                "Succeeded"
+                            ]
+                        },
+                        "type": "Foreach"
+                    }
+                },
+                "foreach": "@body('List_files_in_folder')?['value']",
+                "runAfter": {
+                    "List_files_in_folder": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Foreach"
+            },
+            "List_files_in_folder": {
+                "inputs": {
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['onedriveforbusiness']['connectionId']"
+                        }
+                    },
+                    "method": "get",
+                    "path": "/datasets/default/foldersV2/@{encodeURIComponent(encodeURIComponent('b!tH-Duyz55kiSU_csBUAPAMN6nKl3WbpCl6BayFTgYBuAAE6D31hpTaC0HZtK2OWF.01RFSYETHDXI3ZFMTGABEJFAVP57RTP7NQ'))}",
+                    "queries": {
+                        "skipToken": "",
+                        "top": 20
+                    }
+                },
+                "metadata": {
+                    "b!tH-Duyz55kiSU_csBUAPAMN6nKl3WbpCl6BayFTgYBuAAE6D31hpTaC0HZtK2OWF.01RFSYETHDXI3ZFMTGABEJFAVP57RTP7NQ": "/B3Project/JSON"
+                },
+                "runAfter": {},
+                "type": "ApiConnection"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "parameters": {
+            "$connections": {
+                "defaultValue": {},
+                "type": "Object"
+            }
+        },
+        "triggers": {
+            "Recurrence": {
+                "evaluatedRecurrence": {
+                    "frequency": "Hour",
+                    "interval": 1
+                },
+                "recurrence": {
+                    "frequency": "Hour",
+                    "interval": 1
+                },
+                "type": "Recurrence"
+            }
+        }
+    },
+    "parameters": {
+        "$connections": {
+            "value": {
+                "azureblob": {
+                    "connectionId": "/subscriptions/bfaf82db-5be7-4954-842c-e774383f8244/resourceGroups/PPResource/providers/Microsoft.Web/connections/azureblob",
+                    "connectionName": "azureblob",
+                    "id": "/subscriptions/bfaf82db-5be7-4954-842c-e774383f8244/providers/Microsoft.Web/locations/northcentralus/managedApis/azureblob"
+                },
+                "onedriveforbusiness": {
+                    "connectionId": "/subscriptions/bfaf82db-5be7-4954-842c-e774383f8244/resourceGroups/PPResource/providers/Microsoft.Web/connections/onedriveforbusiness",
+                    "connectionName": "onedriveforbusiness",
+                    "id": "/subscriptions/bfaf82db-5be7-4954-842c-e774383f8244/providers/Microsoft.Web/locations/northcentralus/managedApis/onedriveforbusiness"
+                }
+            }
+        }
+    }
+}
