@@ -1,0 +1,60 @@
+{
+	"name": "Dts_B3_Db",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Lks_b3_database",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Data",
+				"type": "date"
+			},
+			{
+				"name": "Open",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "High",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Low",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Adj Close",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Close",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Volume",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "Stock",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "stg",
+			"table": "Historico"
+		}
+	}
+}
