@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'Lks_ADLS_B3'"
 		},
+		"Lks_b3_database_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Lks_b3_database'"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -40,6 +44,9 @@
 					},
 					"Lks_ADLS_B3_connectionString": {
 						"value": "[parameters('Lks_ADLS_B3_connectionString')]"
+					},
+					"Lks_b3_database_connectionString": {
+						"value": "[parameters('Lks_b3_database_connectionString')]"
 					}
 				}
 			},

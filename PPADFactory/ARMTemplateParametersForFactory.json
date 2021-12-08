@@ -7,6 +7,9 @@
 		},
 		"Lks_ADLS_B3_connectionString": {
 			"value": ""
+		},
+		"Lks_b3_database_connectionString": {
+			"value": ""
 		}
 	}
 }
