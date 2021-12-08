@@ -91,6 +91,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
+						"fileName": "acoes.json",
 						"container": "silver"
 					}
 				},

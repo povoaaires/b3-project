@@ -87,19 +87,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Lks_ADLS_B3')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('Lks_ADLS_B3_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/Dts_B3_Bronze')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -161,6 +148,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
+						"fileName": "acoes.json",
 						"container": "silver"
 					}
 				},
@@ -169,6 +157,19 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/Lks_ADLS_B3')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Lks_ADLS_B3')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('Lks_ADLS_B3_connectionString')]"
+				}
+			},
+			"dependsOn": []
 		}
 	]
 }
