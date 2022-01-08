@@ -7,13 +7,17 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "PPADFactory"
 		},
-		"Lks_ADLS_B3_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Lks_ADLS_B3'"
+		"AzureKeyVault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://B3ProjKeyVault.vault.azure.net/"
 		},
-		"Lks_b3_database_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Lks_b3_database'"
+		"Lks_ADLS_B3_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "connectstrings"
+		},
+		"Lks_b3_database_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "cstringdb"
 		},
 		"containerUri": {
 			"type": "string",
@@ -42,11 +46,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"Lks_ADLS_B3_connectionString": {
-						"value": "[parameters('Lks_ADLS_B3_connectionString')]"
+					"AzureKeyVault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault_properties_typeProperties_baseUrl')]"
 					},
-					"Lks_b3_database_connectionString": {
-						"value": "[parameters('Lks_b3_database_connectionString')]"
+					"Lks_ADLS_B3_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('Lks_ADLS_B3_properties_typeProperties_connectionString_secretName')]"
+					},
+					"Lks_b3_database_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('Lks_b3_database_properties_typeProperties_connectionString_secretName')]"
 					}
 				}
 			},
