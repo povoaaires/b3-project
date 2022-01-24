@@ -35,7 +35,7 @@ O Projeto B3 consiste em um projeto de extração e armazenamento de dados hist�
 
 <tr>
 <td style="width:200">
-        <img src="https://github.com/povoaaires/B3Project/blob/main/assets/logicapp.png"style="width=180; height:85px;">
+        <img src="https://github.com/povoaaires/B3Project/blob/main/assets/logicapp.png"style="width=80; height:35px;">
     </td>
     <td style="width:100">É responsável por acessar todos os arquivos JSON na pasta do OneDrive e jogá-las na primeira camada do Data Lake
     </td>
