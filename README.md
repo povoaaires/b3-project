@@ -10,12 +10,41 @@ O Projeto B3 consiste em um projeto de extração e armazenamento de dados hist�
 <br>
 <div class="tech">
 <h2>Tecnologias</h2><br>
+
+<table>
+
 <tr>
-<td><img src="https://github.com/povoaaires/B3Project/blob/main/assets/ADF.png" style="width=180; height:85px;"></td>
-<td><img src="https://github.com/povoaaires/B3Project/blob/main/assets/azure%20SQL.png"style="width=380; height:115px;"></td>
-<td><img src="https://github.com/povoaaires/B3Project/blob/main/assets/logicapp.png"style="width=180; height:85px;"></td>
+    <td>
+        <img src="https://github.com/povoaaires/B3Project/blob/main/assets/ADF.png" style="width=180; height:85px;">
+    </td>
+    <td><p></p>
+    </td>
+
 
 </tr>
+
+<tr>
+<td>
+        <img src="https://github.com/povoaaires/B3Project/blob/main/assets/azure%20SQL.png"style="width=380; height:155px;">
+    </td>
+    <td><p></p>
+    </td>
+
+
+</tr>
+
+<tr>
+<td>
+        <img src="https://github.com/povoaaires/B3Project/blob/main/assets/logicapp.png"style="width=180; height:85px;">
+    </td>
+    <td><p></p>
+    </td>
+
+
+</tr>
+
+
+</table>
 
 </div>
 
