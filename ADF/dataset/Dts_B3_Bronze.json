@@ -1,0 +1,43 @@
+{
+	"name": "Dts_B3_Bronze",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Lks_ADLS_B3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "bronze"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Date": {
+					"type": "string"
+				},
+				"Open": {
+					"type": "number"
+				},
+				"High": {
+					"type": "number"
+				},
+				"Low": {
+					"type": "number"
+				},
+				"Close": {
+					"type": "number"
+				},
+				"Adj Close": {
+					"type": "number"
+				},
+				"Volume": {
+					"type": "number"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"name": "Lks_b3_database",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "cstringdb",
+				"secretVersion": "4c651a4402c24c50a341cfac001e6aa3"
+			}
+		}
+	}
+}
