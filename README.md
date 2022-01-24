@@ -14,7 +14,7 @@ O Projeto B3 consiste em um projeto de extração e armazenamento de dados hist�
 
 <table>
 <tr>
-    <td style="width:200">
+    <td style="width:500">
         <img src="https://github.com/povoaaires/B3Project/blob/main/assets/ADF.png" style="width=125; height:75px;">
     </td>
     <td style="width:100">Utilizado para fazer a orquestração de dados do projeto, o ADF irá movimentar dados entre as camadas do Data Lake.
