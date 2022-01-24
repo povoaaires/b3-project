@@ -11,13 +11,13 @@ O Projeto B3 consiste em um projeto de extração e armazenamento de dados hist�
 <div class="tech">
 <h2>Tecnologias</h2><br>
 
-<table>
+
 
 <tr>
     <td>
         <img src="https://github.com/povoaaires/B3Project/blob/main/assets/ADF.png" style="width=180; height:85px;">
     </td>
-    <td><p></p>
+    <td><p>-> Utilizado para fazer a orquestração de dados do projeto, o ADF irá movimentar dados entre as camadas do Data Lake.</p>
     </td>
 
 
@@ -25,9 +25,9 @@ O Projeto B3 consiste em um projeto de extração e armazenamento de dados hist�
 
 <tr>
 <td>
-        <img src="https://github.com/povoaaires/B3Project/blob/main/assets/azure%20SQL.png"style="width=380; height:155px;">
+        <img src="https://github.com/povoaaires/B3Project/blob/main/assets/ADLS.png"style="width=380; height:155px;">
     </td>
-    <td><p></p>
+    <td><p>Separado em três camadas, bronze, silver e gold, sendo que a primeira camada recebe o dado cru, a intermediária faz a agregação de todos os dados em um único arquivo e a camada gold é a de disponibilização para o cliente final consumir</p>
     </td>
 
 
@@ -37,14 +37,14 @@ O Projeto B3 consiste em um projeto de extração e armazenamento de dados hist�
 <td>
         <img src="https://github.com/povoaaires/B3Project/blob/main/assets/logicapp.png"style="width=180; height:85px;">
     </td>
-    <td><p></p>
+    <td><p>-> É responsável por acessar todos os arquivos JSON na pasta do OneDrive e jogá-las na primeira camada do Data Lake</p>
     </td>
 
 
 </tr>
 
 
-</table>
+
 
 </div>
 
@@ -54,7 +54,7 @@ O Projeto B3 consiste em um projeto de extração e armazenamento de dados hist�
 <div class="flow">
 <h2>Desenho do Fluxo</h2><br>
 
-<img src="https://github.com/povoaaires/B3Project/blob/main/assets/teste%20flow.png">
+<img src="https://github.com/povoaaires/B3Project/blob/main/assets/B3Project-Architecture-v1.png">
 
 </div>
 
