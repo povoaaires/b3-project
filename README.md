@@ -45,14 +45,11 @@ O Projeto B3 consiste em um projeto de extração e armazenamento de dados hist�
 
 </table>
 
-
 </div>
-
-
 
 <br><br>
 <div class="flow">
-<h2>Desenho do Fluxo</h2><br>
+<h2>Arquitetura</h2><br>
 
 <img src="https://github.com/povoaaires/B3Project/blob/main/assets/B3Project-Architecture-v1.png">
 
