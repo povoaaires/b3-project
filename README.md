@@ -6,8 +6,9 @@ O Projeto B3 consiste em um projeto de extração e armazenamento de dados hist�
 </p>
 </div>
 
+<br><br>
 <div class="flow">
-<h2>Desenho do Fluxo</h2><br><br>
+<h2>Desenho do Fluxo</h2><br>
 
 <img src="https://github.com/povoaaires/B3Project/blob/main/assets/B3Project-Architecture-v1.png">
 
