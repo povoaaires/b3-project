@@ -14,30 +14,30 @@ O Projeto B3 consiste em um projeto de extração e armazenamento de dados hist�
 
 <table>
 <tr>
-    <td>
+    <td style="width:200">
         <img src="https://github.com/povoaaires/B3Project/blob/main/assets/ADF.png" style="width=180; height:85px;">
     </td>
-    <td>Utilizado para fazer a orquestração de dados do projeto, o ADF irá movimentar dados entre as camadas do Data Lake.
+    <td style="width:100">Utilizado para fazer a orquestração de dados do projeto, o ADF irá movimentar dados entre as camadas do Data Lake.
     </td>
 
 
 </tr>
 
 <tr>
-<td>
+<td style="width:200">
         <img src="https://github.com/povoaaires/B3Project/blob/main/assets/ADLS.png"style="width=180; height:85px;">
     </td>
-    <td>Separado em três camadas, bronze, silver e gold, sendo que a primeira camada recebe o dado cru, a intermediária faz a agregação de todos os dados em um único arquivo e a camada gold é a de disponibilização para o cliente final consumir
+    <td style="width:100">Separado em três camadas, bronze, silver e gold, sendo que a primeira camada recebe o dado cru, a intermediária faz a agregação de todos os dados em um único arquivo e a camada gold é a de disponibilização para o cliente final consumir
     </td>
 
 
 </tr>
 
 <tr>
-<td>
+<td style="width:200">
         <img src="https://github.com/povoaaires/B3Project/blob/main/assets/logicapp.png"style="width=180; height:85px;">
     </td>
-    <td>É responsável por acessar todos os arquivos JSON na pasta do OneDrive e jogá-las na primeira camada do Data Lake
+    <td style="width:100">É responsável por acessar todos os arquivos JSON na pasta do OneDrive e jogá-las na primeira camada do Data Lake
     </td>
 
 
